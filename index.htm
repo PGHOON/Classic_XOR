@@ -14,13 +14,13 @@ async function load() {
 
 function predict(model) {
     const userInput = document.getElementById('userInput').value;
-    const inputTensor = tf.tensor([parseInt(userInput)]);
-    
+    const inputNumbers = userInput.split(',').map(num => parseInt(num.trim()));
+    const inputTensor = tf.tensor([inputNumbers]);
+
     model.then(model => {
         let result = model.predict(inputTensor);
         result = result.round().dataSync()[0];
         alert(result ? "Same bits" : "Different bits");
-        
     });
 };
 
@@ -30,7 +30,7 @@ const model = load();
 </head>
 
 <body>
-<h3>  ML example  </h3>
+<h3>  XOR example  </h3>
 
 <input id="userInput" type="text">  </input>
 

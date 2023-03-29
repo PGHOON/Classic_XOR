@@ -1,2 +1,2 @@
 # Deploying
-https://pghoon.github.io/ITS365_XOR/
+https://pghoon.github.io/Classic_XOR/
